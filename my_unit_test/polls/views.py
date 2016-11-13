@@ -8,6 +8,7 @@ The view's for the polls application.
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
+from django.utils import timezone
 
 from .models import Question, Choice
 
@@ -15,7 +16,9 @@ def index(request):
 	"""The main index view, showing a list of the poll questions."""
 
 	# Get the latest 5 questions.
-	latest_question_list = Question.objects.order_by('-pub_date')[:5]
+	latest_question_list = Question.objects.filter(
+			pub_date__lte=timezone.now()
+		).order_by('-pub_date')[:5]
 
 	# Set the template context object to include our latest questions list.
 	context = {
