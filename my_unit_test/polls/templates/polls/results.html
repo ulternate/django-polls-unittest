@@ -1,0 +1,17 @@
+{% comment %}
+	Created: Daniel Swain
+	Date: 13/11/2016
+
+	HTML template file for viewing the poll results.
+{% endcomment %}
+
+<h1>{{ question.question_text }}</h1>
+
+{# list the choices for the question and the number of votes, pluralised if more than 1 #}
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a>

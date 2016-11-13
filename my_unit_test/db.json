@@ -1,0 +1,72 @@
+[
+	{
+		"model": "polls.question", 
+		"pk": 1, 
+		"fields": {
+			"question_text": "Will I ever pass this tafe course?", 
+			"pub_date": "2016-11-13T04:26:31.299Z"
+		}
+	},
+	{
+		"model": "polls.choice", 
+		"pk": 1, 
+		"fields": {
+			"question": 1, 
+			"choice_text": "No", 
+			"votes": 1
+		}
+	},
+	{
+		"model": "polls.choice", 
+		"pk": 2, 
+		"fields": {
+			"question": 1, 
+			"choice_text": "Yes", 
+			"votes": 1
+		}
+	},
+	{	
+		"model": "polls.choice", 
+		"pk": 3, 
+		"fields": {
+			"question": 1, 
+			"choice_text": "Only if you give me $20", 
+			"votes": 2
+		}
+	},
+	{
+		"model": "polls.question",
+		"pk": 2,
+		"fields": {
+			"question_text": "Was Daniel a good student?",
+			"pub_date": "2016-11-13T04:26:31.299Z"
+		}
+	},
+	{
+		"model": "polls.choice", 
+		"pk": 4, 
+		"fields": {
+			"question": 2, 
+			"choice_text": "Yes", 
+			"votes": 0
+		}
+	},
+	{
+		"model": "polls.choice", 
+		"pk": 5, 
+		"fields": {
+			"question": 2, 
+			"choice_text": "Of Course", 
+			"votes": 0
+		}
+	},
+	{
+		"model": "polls.choice", 
+		"pk": 6, 
+		"fields": {
+			"question": 2, 
+			"choice_text": "He was the best!", 
+			"votes": 0
+		}
+	}
+]

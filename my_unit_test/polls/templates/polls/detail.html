@@ -1,0 +1,20 @@
+{% comment %}
+	Created: Daniel Swain
+	Date: 13/11/2016
+
+	HTML template file for viewing the choices for a question.
+{% endcomment %}
+
+<h1>{{ question.question_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+{# simple form for voting/chosing the answer to the given question #}
+<form action="{% url 'polls:vote' question.id %}" method="post">
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+	<input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+	<label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+{% endfor %}
+<input type="submit" value="Vote" />
+</form>
