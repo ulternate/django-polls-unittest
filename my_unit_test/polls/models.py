@@ -27,8 +27,16 @@ class Question(models.Model):
 		return self.question_text
 	
 	def was_published_recently(self):
-		""" Return True if the question was published within the last day, otherwise False."""
-		return self.pub_date >= timezone.now() - datetime.timedelta(days=1)
+		""" Return True if the question was published within the last day, otherwise False.
+
+		Updated to only return True for questions in the past, ignoring those in the future.
+		"""
+
+		# Get the current datetime
+		now = timezone.now()
+
+		# Return true if the pub_date is between 1 day in the past and now, otherwise false.
+		return now - datetime.timedelta(days=1) <= self.pub_date <= now
 
 @python_2_unicode_compatible
 class Choice(models.Model):
