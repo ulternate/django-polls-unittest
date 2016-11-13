@@ -8,6 +8,22 @@
 		}
 	},
 	{
+		"model": "polls.question",
+		"pk": 2,
+		"fields": {
+			"question_text": "Was Daniel a good student?",
+			"pub_date": "2016-11-13T04:26:31.299Z"
+		}
+	},
+	{
+		"model": "polls.question", 
+		"pk": 3, 
+		"fields": {
+			"question_text": "This is a future question and shouldn't be visible", 
+			"pub_date": "2017-02-21T05:56:23.561Z"
+		}
+	},
+	{
 		"model": "polls.choice", 
 		"pk": 1, 
 		"fields": {
@@ -35,14 +51,6 @@
 		}
 	},
 	{
-		"model": "polls.question",
-		"pk": 2,
-		"fields": {
-			"question_text": "Was Daniel a good student?",
-			"pub_date": "2016-11-13T04:26:31.299Z"
-		}
-	},
-	{
 		"model": "polls.choice", 
 		"pk": 4, 
 		"fields": {
@@ -66,6 +74,24 @@
 		"fields": {
 			"question": 2, 
 			"choice_text": "He was the best!", 
+			"votes": 0
+		}
+	},
+	{
+		"model": "polls.choice", 
+		"pk": 7, 
+		"fields": {
+			"question": 3,
+			"choice_text": "It is visible, why is it visible?", 
+			"votes": 0
+		}
+	},
+	{
+		"model": "polls.choice", 
+		"pk": 8, 
+		"fields": {
+			"question": 3, 
+			"choice_text": "It shouldn't be visible, something has gone wrong.", 
 			"votes": 0
 		}
 	}
